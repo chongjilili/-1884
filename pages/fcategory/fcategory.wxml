@@ -1,0 +1,17 @@
+<!--pages/fcategory.wxml-->
+<view class="section">
+  
+  
+  
+  <block wx:for="{{typeTree}}" wx:for-item="i" >
+      <view   class="page-section">
+        
+        <view class="text-wrp">
+          <text   bindtap="navtap" data-catid="{{i.id}}" data-name="{{i.name}}" >{{i.name}}</text>
+        </view>
+      </view>
+  </block>
+   
+
+
+</view>

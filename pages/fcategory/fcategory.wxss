@@ -1,0 +1,15 @@
+/* pages/fcategory.wxss */
+.section{
+  background-color: #eee;
+}
+.page-section{
+  width: calc(100%-40rpx) ;
+  height: min-100rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+  padding: 0 20rpx;
+  line-height: 100rpx;
+}
+
+
+

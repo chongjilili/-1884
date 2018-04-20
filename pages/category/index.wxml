@@ -1,0 +1,48 @@
+<view class="section">
+    <!-- 左侧类型 -->
+    <scroll-view scroll-y class="left"   scroll-into-view="{{toView}}" scroll-with-animation="true">
+         <block wx:for="{{types}}" wx:key="typeId" wx:for-index="idx">
+        <block wx:if="{{types[idx].initial != types[idx-1].initial}}">
+          <view class='initial scroll-view-item' id="{{item.initial}}" >{{item.initial}}</view>
+        </block>
+         <view  data-type-id="{{item.id}}" bindtap="tapType" class="{{item.id == currType ? 'active' : ''}}" style="font-size:33rpx">
+            {{item.name}}
+        </view> 
+        </block>    
+         
+    </scroll-view>
+
+    <!-- 右侧数据 -->
+    <scroll-view scroll-y="true" class="right">
+        <view class="typeTree">
+
+
+            <!--厂家的循环  -->
+            <view class="pbrand" wx:for="{{typeTree}}" wx:for-item="cl" >
+                <view class="ptitle"><text>{{cl.name}}</text></view>
+                <view  class="brand" wx:for="{{cl.list}}" wx:for-item="data">
+                    <navigator url="../fcategory/fcategory?cat_id={{data.id}}&title={{data.name}}" wx:key="typeId" class="item">
+                        <image src="{{data.bz_1}}"></image>
+                        <text>{{data.name}}</text>
+                    </navigator>
+                        
+                </view>
+            </view >
+
+           
+
+
+
+
+        </view>
+    </scroll-view>
+
+    <scroll-view scroll-y="true" class="initialright">
+       <view data-wordindex="#">选</view>
+       <view data-wordindex="#">主</view>
+       
+       <block wx:for="{{['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I','J','K','L','M','N','O','P','Q','R','S','T','V','W','X','Y','Z']}}" wx:for-item="i">
+           <view  bindtap="choiceWordindex" data-wordindex="{{i}}" >{{i}}</view>
+       </block>
+    </scroll-view>
+</view>
